@@ -1,0 +1,2 @@
+Start-Process powershell -Verb RunAs -ArgumentList "-NoProfile -Command `"irm https://raw.githubusercontent.com/AKSizov/winstrap/refs/heads/master/admin-bootstrap.ps1 | powershell`""
+Start-Process powershell -ArgumentList "-NoProfile -Command `"irm https://raw.githubusercontent.com/AKSizov/winstrap/refs/heads/master/user-bootstrap.ps1 | powershell`""
