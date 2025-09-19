@@ -3,3 +3,7 @@ New-ItemProperty -Path "HKCU:\Control Panel\Mouse" -Name "MouseSpeed" -Value "0"
 New-ItemProperty -Path "HKCU:\Control Panel\Mouse" -Name "MouseThreshold1" -Value "0" -PropertyType String -Force
 New-ItemProperty -Path "HKCU:\Control Panel\Mouse" -Name "MouseThreshold2" -Value "0" -PropertyType String -Force
 choco install -y firefox
+choco install -y sunshine
+choco install -y autohotkey
+choco install -y steam
+choco install -y minecraft-launcher
