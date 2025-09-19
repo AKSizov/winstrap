@@ -23,3 +23,4 @@ choco install -y gimp
 
 choco install -y steam
 choco install -y minecraft-launcher
+choco install -y epicgameslauncher
