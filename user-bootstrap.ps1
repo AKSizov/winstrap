@@ -9,7 +9,7 @@ explorer C:\docs\res
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 # Install Scoop only if it's not already installed
 if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
-    irm get.scoop.sh | iex
+    powershell -NoProfile -Command "irm get.scoop.sh | iex"
 }
 
 scoop install git
