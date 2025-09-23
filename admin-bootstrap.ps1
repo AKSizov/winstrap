@@ -6,45 +6,21 @@ New-ItemProperty -Path "HKCU:\Control Panel\Mouse" -Name "MouseThreshold2" -Valu
 # Enable file extensions
 Set-Itemproperty -path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'HideFileExt' -value 0
 
-# Restore legacy right click menu
-reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+# Install choco
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-# Run this script as Administrator
+# Install programs
+choco install -y firefox
+choco install -y sunshine
+choco install -y autohotkey
 
-# TCP Ports to allow
-$tcpPorts = @(47984, 47989, 48010)
+choco install -y git
+choco install -y rsync
 
-# UDP Ports to allow (individual and range)
-$udpPorts = @(48002, 48010)
-$udpPortRanges = @("47998-48000")
+choco install -y blender
+choco install -y freecad
+choco install -y gimp
 
-# Function to add a firewall rule for TCP
-foreach ($port in $tcpPorts) {
-    New-NetFirewallRule -DisplayName "Allow TCP Port $port" `
-                        -Direction Inbound `
-                        -Protocol TCP `
-                        -LocalPort $port `
-                        -Action Allow `
-                        -Profile Any
-}
-
-# Function to add a firewall rule for UDP (individual ports)
-foreach ($port in $udpPorts) {
-    New-NetFirewallRule -DisplayName "Allow UDP Port $port" `
-                        -Direction Inbound `
-                        -Protocol UDP `
-                        -LocalPort $port `
-                        -Action Allow `
-                        -Profile Any
-}
-
-# Function to add a firewall rule for UDP (ranges)
-foreach ($range in $udpPortRanges) {
-    New-NetFirewallRule -DisplayName "Allow UDP Ports $range" `
-                        -Direction Inbound `
-                        -Protocol UDP `
-                        -LocalPort $range `
-                        -Action Allow `
-                        -Profile Any
-}
-pause
+choco install -y steam
+choco install -y minecraft-launcher
+choco install -y epicgameslauncher
