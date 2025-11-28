@@ -20,6 +20,7 @@ choco install -y autohotkey
 
 choco install -y blender
 choco install -y freecad
+choco install -y openscad
 choco install -y gimp
 
 choco install -y steam
