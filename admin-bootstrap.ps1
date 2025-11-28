@@ -14,6 +14,10 @@ choco install -y sunshine
 choco install -y firefox
 choco install -y nvidia-app
 
+choco install -y steam
+choco install -y minecraft-launcher
+choco install -y epicgameslauncher
+
 choco install -y git
 choco install -y rsync
 choco install -y autohotkey
@@ -22,7 +26,3 @@ choco install -y blender
 choco install -y freecad
 choco install -y openscad
 choco install -y gimp
-
-choco install -y steam
-choco install -y minecraft-launcher
-choco install -y epicgameslauncher
