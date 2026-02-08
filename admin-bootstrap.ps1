@@ -19,6 +19,10 @@ choco install -y steam
 choco install -y minecraft-launcher
 choco install -y epicgameslauncher
 
+choco install -y obs-studio
+choco install -y discord
+choco install -y sonobus
+
 choco install -y git
 choco install -y rsync
 # choco install -y autohotkey
