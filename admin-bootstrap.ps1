@@ -11,7 +11,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 # Install programs
 choco install -y sunshine
-choco install -y parsec --params "/Shared"
+choco install -y parsec --params "/Shared" --ignore-checksums
 choco install -y firefox
 choco install -y nvidia-app
 
